@@ -32,4 +32,4 @@ MIT License
 
 GitHub Repo Link: https://github.com/OConnell-Coder/e-commerce-api
 
-Walkthrough Video Link: 
+Walkthrough Video Link: https://drive.google.com/file/d/1wdwy1ycGB6MVADdRN094sjS1ATtuA1oE/view
