@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
      });
      if (!searchData) {
       return res.status(404).json({
-        "message": "No category with that id was found."
+        "message": "No product with that id was found."
       });
      }
      return res.json(searchData);
@@ -111,8 +111,25 @@ router.put('/:id', (req, res) => {
 });
 
 
-router.delete('/:id', (req, res) => {
-  // delete one product by its `id` value
+// delete one product by its `id` value
+router.delete('/:id', async (req, res) => {
+  try {
+      const deleteData = await Product.destroy({
+       where: {
+        id: req.params.id
+       },
+        include: [Product]
+     });
+     if (!deleteData) {
+      return res.status(404).json({
+        "message": "No product with that id was found."
+      });
+     }
+     return res.json(deleteData);
+  } catch(err) {
+      return res.status(500).json(err);
+  }
 });
+
 
 module.exports = router;
