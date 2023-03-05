@@ -42,6 +42,7 @@ router.post('/', (req, res) => {
 .catch(err => res.status(500).json(err));
 });
 
+
 // update a category by its `id` value
 router.put('/:id', async (req, res) => {
   try {
@@ -61,6 +62,7 @@ router.put('/:id', async (req, res) => {
       return res.status(500).json(err);
   }
 });
+
 
 // delete a category by its `id` value
 router.delete('/:id', async (req, res) => {
